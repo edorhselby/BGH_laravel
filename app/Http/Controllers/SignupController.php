@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 
 
@@ -15,10 +14,10 @@ class SignupController
 
     public function store(Request $request)
     {    
-        dd($request->all(),$request->method());
+
         $request->validate([
             'name'=>'required',
-            'email'=>'required',
+            'email'=>'required|email|unique:users,email',
             'password'=>'required',
         ]);
 
