@@ -8,12 +8,12 @@
 <body>
     <form action="/signup" method="POST"> @csrf
         <label>Username</label>
-        <input type="text" name="username" id="username">
+        <input type="text" name="name" id="username">
         <label>Password</label>
         <input type="password" name="password" id="password">
         <label>Email</label>
         <input type="email" name="email" id="email">
-        <button>Submit</button>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
