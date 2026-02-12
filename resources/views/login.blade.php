@@ -10,6 +10,7 @@
 <body>
     <h1>Login Here</h1>
     <form action="/login" method="POST">
+        @csrf
         <label>Username</label>
         <input type="text" name="name" id='name'>
         <label>Password</label>
