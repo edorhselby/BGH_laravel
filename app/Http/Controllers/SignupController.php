@@ -15,13 +15,6 @@ class SignupController
     public function store(Request $request)
     {    
 
-        $request->validate([
-            'name'=>'required',
-            'email'=>'required|email|unique:users,email',
-            'password'=>'required',
-        ]);
-
-
          User::create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),

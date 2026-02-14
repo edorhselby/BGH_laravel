@@ -8,6 +8,7 @@
 </head>
 
 <body>
+   
     <h1>Login Here</h1>
     <form action="/login" method="POST">
         @csrf
@@ -17,6 +18,13 @@
         <input type="password" name="password" id='password'>
         <button>Submit</button>
     </form>
+     @if ($errors->all())
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }} </li>
+        @endforeach
+    </ul>     
+    @endif
 </body>
 
 </html>
