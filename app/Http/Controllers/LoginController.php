@@ -16,12 +16,12 @@ class LoginController{
     //request validation for login inputs.
 
         $credentials = $request->validate([
-            'name'=>'required',
+            'email'=>'required',
             'password'=>'required'
         ]);
 
         if(Auth::attempt($credentials)){
-             return view('Dashboard',['name'=>$request->name]);
+             return view('Dashboard');
         }
         
         //return user back to login page if not authenticated
