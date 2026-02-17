@@ -8,6 +8,8 @@
     @vite('resources/css/home.css')
 </head>
 <body>
-    <h1>Welcome To Client Dashboard</h1>
+    <h1> Admin Dashboard</h1>
+    <p><a href='/service upload form'>Upload a service</a></p>
+    <p><a href='/view bookings'>View Bookings</a></p>
 </body>
 </html>

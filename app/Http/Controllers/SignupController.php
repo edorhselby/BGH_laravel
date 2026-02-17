@@ -22,6 +22,6 @@ class SignupController
             ]);
 
         
-       return "Succesful signup!";
+       return redirect('dashboard');
     }
 }
