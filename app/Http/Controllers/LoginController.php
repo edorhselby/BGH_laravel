@@ -16,7 +16,7 @@ class LoginController{
 
     //request validation for login inputs.
         
-
+         
         $credentials = $request->validate([
             'email'=>'required',
             'password'=>'required'

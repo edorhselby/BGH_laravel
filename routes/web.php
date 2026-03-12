@@ -11,7 +11,7 @@ Route::prefix('signup')->group(function(){
    Route::get('/',function(){
     return view('signup');
    });
-   Route::post('/register', [SignupController::class, 'store'])->middleware(TestMiddleware::class);
+   Route::post('/register', [SignupController::class, 'store']);
 });
 
 

@@ -14,7 +14,7 @@ class SignupController
 
     public function store(Request $request)
     {    
-         
+        
 
           $request->validate([
             'name'=>'required|unique:users',
