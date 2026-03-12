@@ -15,12 +15,7 @@ class TestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
- 
-        $request->validate([
-            'name'=>'required|unique:users',
-            'email'=>'required|unique:users',
-            'password'=>'required|min:5'
-        ]);   
+           
         
         return $next($request);
     }

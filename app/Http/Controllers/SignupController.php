@@ -14,6 +14,13 @@ class SignupController
 
     public function store(Request $request)
     {    
+         
+
+          $request->validate([
+            'name'=>'required|unique:users',
+            'email'=>'required|unique:users',
+            'password'=>'required|min:5'
+        ]);   
 
          User::create([
                 'name' => $request->input('name'),
@@ -21,6 +28,7 @@ class SignupController
                 'password' => Hash::make($request->input('password'))
             ]);
 
+          
         
        return redirect('dashboard');
     }

@@ -5,6 +5,7 @@ namespace app\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController{
     
     /* 
@@ -14,6 +15,7 @@ class LoginController{
     public function login( Request $request){
 
     //request validation for login inputs.
+        
 
         $credentials = $request->validate([
             'email'=>'required',
@@ -21,8 +23,18 @@ class LoginController{
         ]);
 
         if(Auth::attempt($credentials)){
-             return view('Dashboard');
+
+             $user = Auth::user();
+
+            if($user->role == 'Admin'){
+                return view('AdminDashboard');
+            }else{
+               //was about to add an admin authentication layer
+               return view('Dashboard');
+            }
+            
         }
+
         
         //return user back to login page if not authenticated
         return back()->withErrors('The provided credentials can not be found in our records');
