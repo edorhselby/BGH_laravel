@@ -8,11 +8,10 @@
     @vite('resources/css/home.css')
 </head>
 <body>
-    <h1>WELCOME TO BEE'S GLAM HUB<br><br>LANDING PAGE</h1>
-    <p><a href='/signup'>Signup</a></p>
-    <p><a href='/login'>Login</a></p>
-    <p><a href='/Services'>Services</a></p>
-    <p><a href='/Contact'>Contact</a></p>
-    <p><a href='/About'>About</a></p>
+    <section>
+    <h1> Service Form</h1>
+    <label>Servicce Name</label>
+    <input type=text>
+    </section>
 </body>
 </html>
