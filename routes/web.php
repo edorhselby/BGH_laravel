@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\LoginController;
@@ -25,6 +26,10 @@ Route::post('/login',[LoginController::class,'login']
 Route::view('/dashboard', 'Dashboard');
 
 Route::view('/admindashboard', 'AdminDashboard');
+
+Route::view('/serviceform', 'ServiceForm'); 
+Route::get('/services',[ServiceController::class,'showServices']);
+Route::post('/services', [ServiceController::class, 'storeService']);
 
 
 

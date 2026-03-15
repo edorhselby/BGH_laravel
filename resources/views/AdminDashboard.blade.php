@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1> Admin Dashboard</h1>
-    <p><a href='/service upload form'>Upload a service</a></p>
+    <p><a href='/services'>Services</a></p>
     <p><a href='/view bookings'>View Bookings</a></p>
 </body>
 </html>

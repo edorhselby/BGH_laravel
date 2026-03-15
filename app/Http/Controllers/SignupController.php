@@ -14,7 +14,6 @@ class SignupController
 
     public function store(Request $request)
     {    
-        
 
           $request->validate([
             'name'=>'required|unique:users',
@@ -31,5 +30,7 @@ class SignupController
           
         
        return redirect('dashboard');
+
+       //admin pwd(admin1233) = $2y$12$DPoej0J1J9APkIWRBW4kNOH6LGmP22qZ2/dpo3G8frkxYsiTe9HBi 
     }
 }
