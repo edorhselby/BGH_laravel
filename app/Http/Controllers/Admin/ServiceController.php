@@ -39,6 +39,6 @@ class ServiceController
     public function showServices()
     {
        $results = Service::all();
-       return view('AdminPages/Services',compact('results'));
+       return view('AdminPages.Services',compact('results'));
     }
 }
