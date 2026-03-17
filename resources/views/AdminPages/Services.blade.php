@@ -18,9 +18,9 @@
            <p><h4>Description:</h4>{{$result->Description}}</p>
          </div>
          <div>
-            <a href='services/editservice'>
+           <a href='/EditService'>
             <button>Edit</button>
-            </a>
+</a>
          </div>
           <div>
             <form action ="{{url( 'services/deleteservice/'. $result->id) }}" method='POST'>@csrf
@@ -28,8 +28,10 @@
             <button>Delete</button>
             </form>
          </div>
+         <div>
+           
      @endforeach 
-
+      
         <br> <br>
            <a href='/serviceform'>
         <button>Create a service</button>

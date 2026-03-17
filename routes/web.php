@@ -29,15 +29,14 @@ Route::view('/dashboard', 'clientPages.Dashboard');
 Route::view('/admindashboard', 'AdminPages.AdminDashboard');
 
 Route::view('/serviceform', 'AdminPages.ServiceForm'); 
+Route::get('EditService', function(){
+    return view('AdminPages.EditService');
+});
 Route::get('/services',[ServiceController::class,'showServices']);
 Route::post('/services', [ServiceController::class, 'storeService']);
-Route::put('/services/editservice',[ServiceController::class, 'editservice']);
+Route::put('/services/editservice/{id}',[ServiceController::class, 'editservice']);
 Route::delete('/services/deleteservice/{id}',[ServiceController::class, 'deleteService']);
 
-// Route::get('/services/deleteservice/{name}',function( $name = 'john'){
-//         return 'this is the '.$name;
-// });
 
-// this was where I got trying to fix the route.
 
 

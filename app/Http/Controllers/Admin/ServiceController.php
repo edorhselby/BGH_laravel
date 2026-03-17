@@ -27,7 +27,7 @@ class ServiceController
         return redirect('services');
     }
     
-    public function editServices(){
+    public function editServices($id){
          
     }
 

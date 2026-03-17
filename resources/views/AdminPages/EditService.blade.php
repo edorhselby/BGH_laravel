@@ -9,17 +9,18 @@
 </head>
 <body>
     <section>
-        <form action ='/services' method='POST'>@csrf
-    <h1>Create a Service</h1>
-    <label>Service Name</label>
-    <input type=text name='name'>
+        <div>
+            <h1>Edit Service</h1>
+     <form action='{{url("services/editservice/".$result->id)}}' method='POST'>@csrf
+                 <label>Service Name</label>
+    <input type=text name='name' value='{{$result->service_name}}'>
     <label>Service Price</label>
-    <input type=number name='price'>
+    <input type=number name='price' value='{{$result->service_price}}'>
     <label>Service Description</label>
-    <input type=textarea name='desc'>
+    <input type=textarea name='desc' value='{{$result->Description}}'>
     <button>Submit</button>
-        </form>
-    </section>
+</form>
 </div>
+</section>
 </body>
 </html>
