@@ -31,8 +31,9 @@ class ServiceController
          
     }
 
-     public function deleteService($name){
-        return 'I am about to delete'.$name;
+     public function deleteService($id){
+      Service::destroy($id);
+      return redirect()->back()->with('Success','Service Deleted');
     }
 
 

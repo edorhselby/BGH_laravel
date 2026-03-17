@@ -32,11 +32,11 @@ Route::view('/serviceform', 'AdminPages.ServiceForm');
 Route::get('/services',[ServiceController::class,'showServices']);
 Route::post('/services', [ServiceController::class, 'storeService']);
 Route::put('/services/editservice',[ServiceController::class, 'editservice']);
-// Route::get('/services/deleteservice/{$name}',[ServiceController::class, 'deleteService']);
+Route::delete('/services/deleteservice/{id}',[ServiceController::class, 'deleteService']);
 
-Route::get('/services/deleteservice/{name}',function( $name = 'john'){
-        return 'this is the '.$name;
-});
+// Route::get('/services/deleteservice/{name}',function( $name = 'john'){
+//         return 'this is the '.$name;
+// });
 
 // this was where I got trying to fix the route.
 

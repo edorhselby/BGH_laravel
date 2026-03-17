@@ -23,9 +23,10 @@
             </a>
          </div>
           <div>
-            <a href='services/deleteservice'>@csrf
+            <form action ="{{url( 'services/deleteservice/'. $result->id) }}" method='POST'>@csrf
+                @method('DELETE')
             <button>Delete</button>
-            </a>
+            </form>
          </div>
      @endforeach 
 
