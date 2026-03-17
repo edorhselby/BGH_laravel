@@ -17,6 +17,16 @@
            <h5>Price:{{ $result->service_price }}</h5>
            <p><h4>Description:</h4>{{$result->Description}}</p>
          </div>
+         <div>
+            <a href='services/editservice'>
+            <button>Edit</button>
+            </a>
+         </div>
+          <div>
+            <a href='services/deleteservice'>@csrf
+            <button>Delete</button>
+            </a>
+         </div>
      @endforeach 
 
         <br> <br>

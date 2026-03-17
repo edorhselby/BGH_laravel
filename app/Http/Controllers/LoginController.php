@@ -27,10 +27,10 @@ class LoginController{
              $user = Auth::user();
 
             if($user->role == 'Admin'){
-                return view('AdminDashboard');
+                return view('AdminPages/AdminDashboard');
             }else{
                //was about to add an admin authentication layer
-               return view('Dashboard');
+               return view('clientPages/Dashboard');
             }
             
         }

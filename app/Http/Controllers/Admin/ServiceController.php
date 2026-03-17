@@ -26,10 +26,19 @@ class ServiceController
 
         return redirect('services');
     }
+    
+    public function editServices(){
+         
+    }
+
+     public function deleteService($name){
+        return 'I am about to delete'.$name;
+    }
+
 
     public function showServices()
     {
        $results = Service::all();
-       return view('Services',compact('results'));
+       return view('AdminPages/Services',compact('results'));
     }
 }
