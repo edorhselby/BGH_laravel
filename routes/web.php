@@ -24,18 +24,24 @@ Route::get('/login', function(){
 Route::post('/login',[LoginController::class,'login']
 );
 
-Route::view('/dashboard', 'clientPages.Dashboard');
+Route::view('dashboard', 'clientPages.Dashboard')->name('dashboard');
 
-Route::view('/admindashboard', 'AdminPages.AdminDashboard');
+Route::view('admindashboard', 'AdminPages.AdminDashboard')->name('admindashboard');
 
-Route::view('/serviceform', 'AdminPages.ServiceForm'); 
-Route::get('EditService', function(){
-    return view('AdminPages.EditService');
+Route::view('services/createService', 'AdminPages.ServiceForm'); 
+
+
+
+
+
+
+Route::prefix('services')->group(function(){
+Route::get('/',[ServiceController::class,'showServices']);
+Route::post('/', [ServiceController::class, 'storeService']);
+Route::put('/editservice/{id}',[ServiceController::class, 'editService']);
+Route::put('/saveedit/{id}',[ServiceController::class, 'saveEdit']);
+Route::delete('/deleteservice/{id}',[ServiceController::class, 'deleteService']);
 });
-Route::get('/services',[ServiceController::class,'showServices']);
-Route::post('/services', [ServiceController::class, 'storeService']);
-Route::put('/services/editservice/{id}',[ServiceController::class, 'editservice']);
-Route::delete('/services/deleteservice/{id}',[ServiceController::class, 'deleteService']);
 
 
 

@@ -9,7 +9,7 @@
 </head>
 <body>
     <section>
-        {{-- This section is to view the available services created --}}
+         This section is to view the available services created 
     <h1>Services</h1>
      @foreach ($results as $result )
          <div>
@@ -18,9 +18,10 @@
            <p><h4>Description:</h4>{{$result->Description}}</p>
          </div>
          <div>
-           <a href='/EditService'>
+            <form action ="{{url( 'services/editservice/'. $result->id) }}" method='POST'>@csrf
+                @method('PUT')
             <button>Edit</button>
-</a>
+            </form>
          </div>
           <div>
             <form action ="{{url( 'services/deleteservice/'. $result->id) }}" method='POST'>@csrf
@@ -30,12 +31,17 @@
          </div>
          <div>
            
-     @endforeach 
+     @endforeach  
       
         <br> <br>
-           <a href='/serviceform'>
+           <a href='services/createService'>
         <button>Create a service</button>
     </a>
     </section>
+    
+    
 </body>
-</html>
+</html> 
+
+
+
