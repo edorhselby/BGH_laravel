@@ -11,13 +11,16 @@
     <section>
         <div>
             <h1>Edit Service</h1>
-     <form action='{{url("services/editservice/".$result->id)}}' method='POST'>@csrf
+     <form action='{{url("services/saveedit/{$result->id}")}}' method='POST'>@csrf
+        @method('PUT')
                  <label>Service Name</label>
-    <input type=text name='name' value='{{$result->service_name}}'>
+                    <input type=text name='name' value='{{$result->service_name}}'>
     <label>Service Price</label>
     <input type=number name='price' value='{{$result->service_price}}'>
     <label>Service Description</label>
-    <input type=textarea name='desc' value='{{$result->Description}}'>
+    <input type=textarea name='desc' value='{{$result->Description}}'>                
+
+<br>
     <button>Submit</button>
 </form>
 </div>

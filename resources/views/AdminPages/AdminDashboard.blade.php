@@ -12,6 +12,7 @@
     <p><a href='/services'>Services</a></p>
     <p><a href='/view bookings'>View Bookings</a></p>
 </body>
+
 </html> -->
 
 <!DOCTYPE html>
@@ -372,3 +373,7 @@
 </footer>
 </main>
 </body></html>
+
+</html> 
+
+

@@ -24,7 +24,7 @@ Route::get('/login', function(){
 Route::post('/login',[LoginController::class,'login']
 );
 
-Route::view('/dashboard', 'clientPages.Dashboard');
+Route::view('dashboard', 'clientPages.Dashboard')->name('dashboard');
 
 Route::view('/admin/dashboard', 'AdminPages.AdminDashboard');
 

@@ -29,8 +29,19 @@ class ServiceController
         return redirect('/admin/services');
     }
     
-    public function editServices($id){
-         
+    public function editService($id){
+        $result = Service::find($id);
+         return view('AdminPages.EditService',compact('result'));
+    }
+
+    Public function saveEdit(Request $request,$id){
+        $result = Service::where('id',$id);
+        $result->update([
+            'service_name'=>$request->input('name'),
+            'service_price'=>$request->input('price'),
+            'Description'=>$request->input('desc')
+        ]);
+        return redirect('services');
     }
 
      public function deleteService($id){
