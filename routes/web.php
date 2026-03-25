@@ -26,16 +26,17 @@ Route::post('/login',[LoginController::class,'login']
 
 Route::view('/dashboard', 'clientPages.Dashboard');
 
-Route::view('/admindashboard', 'AdminPages.AdminDashboard');
+Route::view('/admin/dashboard', 'AdminPages.AdminDashboard');
 
-Route::view('/serviceform', 'AdminPages.ServiceForm'); 
+
+Route::view('/admin/services/create', 'AdminPages.ServiceForm'); 
 Route::get('EditService', function(){
     return view('AdminPages.EditService');
 });
-Route::get('/services',[ServiceController::class,'showServices']);
-Route::post('/services', [ServiceController::class, 'storeService']);
-Route::put('/services/editservice/{id}',[ServiceController::class, 'editservice']);
-Route::delete('/services/deleteservice/{id}',[ServiceController::class, 'deleteService']);
+Route::get('/admin/services',[ServiceController::class,'showServices']);
+Route::post('/admin/services/NewService', [ServiceController::class, 'storeService']);
+Route::put('/admin/services/editservice/{id}',[ServiceController::class, 'editservice']);
+Route::delete('/admin/services/deleteservice/{id}',[ServiceController::class, 'deleteService']);
 
 
 

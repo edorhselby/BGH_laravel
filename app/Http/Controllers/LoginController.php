@@ -27,7 +27,7 @@ class LoginController{
              $user = Auth::user();
 
             if($user->role == 'Admin'){
-                return view('AdminPages.AdminDashboard');
+                return redirect('/admin/dashboard');
             }else{
                //was about to add an admin authentication layer
                return view('clientPages.Dashboard');

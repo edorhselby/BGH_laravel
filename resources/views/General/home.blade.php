@@ -112,11 +112,11 @@
                 Bee's Glam Hub
             </div>
 <div class="hidden md:flex items-center gap-10">
-<a class="text-stone-900 dark:text-stone-50 font-semibold border-b border-stone-400 font-noto-serif transition-colors duration-300" href="#">Home</a>
+<a class="text-stone-900 dark:text-stone-50 font-semibold border-b border-stone-400 font-noto-serif transition-colors duration-300" href="/">Home</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/login">Login</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/signup">Signup</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Classes">Classes</a>
-<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Services">Services</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/services">Services</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Shop">Shop</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Portfolio">Portfolio</a>
 </div>
@@ -168,7 +168,7 @@
                             Every service is a bespoke journey tailored to your unique features and style. We use only the most prestigious products in the industry.
                         </p>
 </div>
-<a class="group flex items-center gap-3 text-primary font-semibold text-lg pb-1 border-b-2 border-primary-container" href="#">
+<a class="group flex items-center gap-3 text-primary font-semibold text-lg pb-1 border-b-2 border-primary-container" href="/services">
                         Explore All Services
                         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>

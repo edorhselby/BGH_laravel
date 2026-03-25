@@ -18,13 +18,15 @@ class ServiceController
             ]
         );
 
+      
+
         Service::create([
             'service_name' => $request->input('name'),
             'service_price' => $request->input('price'),
             'Description' => $request->input('desc'),
         ]);
 
-        return redirect('services');
+        return redirect('/admin/services');
     }
     
     public function editServices($id){
@@ -40,6 +42,6 @@ class ServiceController
     public function showServices()
     {
        $results = Service::all();
-       return view('AdminPages.Services',compact('results'));
+       return view('AdminPages.AdminServices',compact('results'));
     }
 }
