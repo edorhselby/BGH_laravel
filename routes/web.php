@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\GService;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\LoginController;
@@ -26,8 +27,7 @@ Route::post('/login',[LoginController::class,'login']
 
 Route::view('dashboard', 'clientPages.Dashboard')->name('dashboard');
 
-Route::view('/admin/dashboard', 'AdminPages.AdminDashboard');
-
+Route::view('/admin/dashboard', 'AdminPages.AdminDashboard')->name('admindashboard');
 
 Route::view('/admin/services/create', 'AdminPages.ServiceForm'); 
 Route::get('EditService', function(){
@@ -38,6 +38,6 @@ Route::post('/admin/services/NewService', [ServiceController::class, 'storeServi
 Route::put('/admin/services/editservice/{id}',[ServiceController::class, 'editservice']);
 Route::delete('/admin/services/deleteservice/{id}',[ServiceController::class, 'deleteService']);
 
-
+Route::get('/services',[GService::class,'showServices']);
 
 

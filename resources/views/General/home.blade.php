@@ -122,11 +122,11 @@
 <a class="text-stone-900 dark:text-stone-50 font-semibold border-b border-stone-400 font-noto-serif transition-colors duration-300" href="/">Home</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/login">Login</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/signup">Signup</a>
-<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Classes">Classes</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/services">Services</a>
+{{-- <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Classes">Classes</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Shop">Shop</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Portfolio">Portfolio</a>
-</div>
+</div> --}} <!-- // TODO:Make pages for these pages. -->
 <button class="silk-gradient text-on-primary px-8 py-3 rounded-md font-medium tracking-wide hover:opacity-90 active:scale-95 transition-all duration-300">
                 Book Now
             </button>

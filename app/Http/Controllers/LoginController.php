@@ -26,25 +26,19 @@ class LoginController{
             $request->session()->regenerate();
             $user = Auth::user();
 
-
-            if($user->role == 'Admin'){
-                return redirect('/admin/dashboard');
-            }else{
-               //was about to add an admin authentication layer
-               return view('clientPages.Dashboard');
-
             // Use lowercase for consistency with database
             if($user->role === 'Admin'){
                 return redirect()->route('admindashboard');
 
-            }
+            }else{
             
             return redirect()->route('dashboard');
-        }
+          }
 
         
-        //return user back to login page if not authenticated
-    return back()->withErrors(['email' => 'The provided credentials are invalid.'])->onlyInput('email');
+          //return user back to login page if not authenticated
+          return back()->withErrors(['email' => 'The provided credentials are invalid.'])->onlyInput('email');
           
+        }
     }
 }

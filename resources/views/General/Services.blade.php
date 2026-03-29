@@ -91,11 +91,11 @@
 <div class="text-2xl font-serif italic text-stone-900 tracking-tight">Bee's Glam Hub</div>
 <div class="hidden md:flex items-center space-x-8">
 <a class="text-stone-500 hover:text-stone-900 transition-colors duration-300 font-manrope text-sm tracking-wide" href="/">Home</a>
-<a class="text-stone-900 font-semibold border-b border-stone-400 font-manrope text-sm tracking-wide" href="/services">Services</a>
-<a class="text-stone-500 hover:text-stone-900 transition-colors duration-300 font-manrope text-sm tracking-wide" href="/classes">Classes</a>
-<a class="text-stone-500 hover:text-stone-900 transition-colors duration-300 font-manrope text-sm tracking-wide" href="/shop">Shop</a>
-<a class="text-stone-500 hover:text-stone-900 transition-colors duration-300 font-manrope text-sm tracking-wide" href="/portfolio">Portfolio</a>
-</div>
+<a class="text-stone-900 font-semibold border-b border-stone-400 font-manrope text-sm tracking-wide" href="#">Services</a>
+{{-- <a class="text-stone-500 hover:text-stone-900 transition-colors duration-300 font-manrope text-sm tracking-wide" href="#">Classes</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-300 font-manrope text-sm tracking-wide" href="#">Shop</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-300 font-manrope text-sm tracking-wide" href="#">Portfolio</a>
+</div> --}} <!-- // TODO:Make Pages for these pages.-->
 <button class="silk-satin-gradient text-on-primary px-6 py-2 rounded-md font-medium text-sm tracking-wide shadow-sm hover:opacity-90 transition-all active:scale-95">
                 Book Now
             </button>
@@ -126,7 +126,6 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
 <!-- Service Card 1: Large Featured -->
-@foreach ($results as $result )
 <div class="md:col-span-8 group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-colors duration-500">
 <div class="flex flex-col md:flex-row h-full">
 <div class="md:w-1/2 p-10 flex flex-col justify-between">
@@ -135,12 +134,11 @@
 <span class="bg-secondary-fixed px-3 py-1 text-[10px] font-bold tracking-widest text-on-secondary-fixed rounded-full">MOST COVETED</span>
 <span class="text-on-surface-variant text-xs">90 MINS</span>
 </div>
-<h3 class="font-headline text-3xl mb-4">{{ $result->service_name }}</h3>
-<p class="text-on-surface-variant mb-6 leading-relaxed">{{ $result->Description }}</p> 
-<!-- The ultimate bridal experience including a 2-hour consultation, luxury skin prep, and a timeless editorial-inspired makeup application for your special day -->
+<h3 class="font-headline text-3xl mb-4">Signature Bridal Editorial</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">The ultimate bridal experience including a 2-hour consultation, luxury skin prep, and a timeless editorial-inspired makeup application for your special day.</p>
 </div>
 <div class="flex items-baseline gap-4">
-<span class="text-3xl font-headline text-primary">${{ $result->service_price }}</span>
+<span class="text-3xl font-headline text-primary">$450</span>
 <span class="text-outline text-sm line-through">$550</span>
 </div>
 </div>
@@ -149,7 +147,6 @@
 </div>
 </div>
 </div>
-@endforeach
 <!-- Service Card 2: Medium -->
 <div class="md:col-span-4 bg-surface-container-low p-10 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors duration-500">
 <div>
