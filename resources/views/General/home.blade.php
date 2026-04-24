@@ -120,14 +120,15 @@
             </div>
 <div class="hidden md:flex items-center gap-10">
 <a class="text-stone-900 dark:text-stone-50 font-semibold border-b border-stone-400 font-noto-serif transition-colors duration-300" href="/">Home</a>
-<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/login">Login</a>
-<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/signup">Signup</a>
+<button onclick="openModal('login')" class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300">Login</button>
+<button onclick="openModal('signup')" class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300">Signup</button>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/services">Services</a>
-{{-- <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Classes">Classes</a>
+ <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Classes">Classes</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Shop">Shop</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Portfolio">Portfolio</a>
-</div> --}} <!-- // TODO:Make pages for these pages. -->
-<button class="silk-gradient text-on-primary px-8 py-3 rounded-md font-medium tracking-wide hover:opacity-90 active:scale-95 transition-all duration-300">
+</div>  <!-- TODO: Make pages for these paths and update hrefs accordingly -->
+<button class="silk-gradient text-on-primary px-8 py-3 rounded-md font-medium tracking-wide hover:opacity-
+90 active:scale-95 transition-all duration-300">
                 Book Now
             </button>
 </div>
@@ -304,6 +305,132 @@
 </div>
 </section>
 </main>
+
+<!-- Auth Modal -->
+<div id="authModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onclick="closeModal(event)">
+  <div class="bg-white dark:bg-stone-900 rounded-lg shadow-xl max-w-md w-full" onclick="event.stopPropagation()">
+    
+    <!-- Modal Tabs -->
+    <div class="flex border-b border-stone-200 dark:border-stone-700">
+      <button onclick="switchTab('login')" class="flex-1 py-4 px-6 text-center font-semibold text-stone-700 dark:text-stone-300 border-b-2 border-transparent hover:text-stone-900 dark:hover:text-stone-100 transition-colors" id="loginTab">Login</button>
+      <button onclick="switchTab('signup')" class="flex-1 py-4 px-6 text-center font-semibold text-stone-700 dark:text-stone-300 border-b-2 border-transparent hover:text-stone-900 dark:hover:text-stone-100 transition-colors" id="signupTab">Sign Up</button>
+    </div>
+
+    <!-- Close Button -->
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-stone-500 hover:text-stone-700 dark:hover:text-stone-300" aria-label="Close">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <!-- Login Form -->
+    <div id="loginContent" class="hidden p-8">
+      <h2 class="text-2xl font-bold text-stone-900 dark:text-white mb-6">Login</h2>
+      <form class="space-y-5" action="/login" method="POST">
+        @csrf
+        <div>
+          <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Email</label>
+          <input type="text" name="email" placeholder="Enter your Email" class="w-full px-4 py-2 border border-stone-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-stone-800 dark:text-white">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Password</label>
+          <input type="password" name="password" placeholder="Enter your Password" class="w-full px-4 py-2 border border-stone-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-stone-800 dark:text-white">
+        </div>
+        <div class="flex items-center justify-between text-sm">
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            <span class="text-stone-600 dark:text-stone-400">Remember me</span>
+          </label>
+          <a href="#" class="text-primary hover:underline">Forgot password?</a>
+        </div>
+        <button type="submit" class="w-full silk-gradient text-on-primary py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">Sign In</button>
+      </form>
+      @if ($errors->all())
+        <div class="mt-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-lg text-sm">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupContent" class="hidden p-8">
+      <h2 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">Create Account</h2>
+      <p class="text-stone-600 dark:text-stone-400 mb-6 text-sm">Create a free account with your email.</p>
+      <form class="space-y-5" action="/signup/register" method="POST">
+        @csrf
+        <div>
+          <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Full Name</label>
+          <input type="text" name="name" placeholder="Full Name" class="w-full px-4 py-2 border border-stone-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-stone-800 dark:text-white">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Email</label>
+          <input type="email" name="email" placeholder="Email" class="w-full px-4 py-2 border border-stone-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-stone-800 dark:text-white">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Password</label>
+          <input type="password" name="password" placeholder="Password" class="w-full px-4 py-2 border border-stone-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-stone-800 dark:text-white">
+        </div>
+        <button type="submit" class="w-full silk-gradient text-on-primary py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">Sign Up</button>
+      </form>
+      @if($errors->all())
+        <div class="mt-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-lg">
+          <ul class="text-sm">
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(tab) {
+  const modal = document.getElementById('authModal');
+  modal.classList.remove('hidden');
+  switchTab(tab);
+}
+
+function closeModal(event) {
+  if (event && event.target.id !== 'authModal') return;
+  const modal = document.getElementById('authModal');
+  modal.classList.add('hidden');
+}
+
+function switchTab(tab) {
+  const loginContent = document.getElementById('loginContent');
+  const signupContent = document.getElementById('signupContent');
+  const loginTab = document.getElementById('loginTab');
+  const signupTab = document.getElementById('signupTab');
+
+  if (tab === 'login') {
+    loginContent.classList.remove('hidden');
+    signupContent.classList.add('hidden');
+    loginTab.classList.add('border-b-2', 'border-primary', 'text-primary');
+    loginTab.classList.remove('border-transparent', 'text-stone-700', 'dark:text-stone-300');
+    signupTab.classList.remove('border-b-2', 'border-primary', 'text-primary');
+    signupTab.classList.add('border-transparent', 'text-stone-700', 'dark:text-stone-300');
+  } else {
+    signupContent.classList.remove('hidden');
+    loginContent.classList.add('hidden');
+    signupTab.classList.add('border-b-2', 'border-primary', 'text-primary');
+    signupTab.classList.remove('border-transparent', 'text-stone-700', 'dark:text-stone-300');
+    loginTab.classList.remove('border-b-2', 'border-primary', 'text-primary');
+    loginTab.classList.add('border-transparent', 'text-stone-700', 'dark:text-stone-300');
+  }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
+</script>
+
 <!-- Footer -->
 <footer class="w-full py-16 px-12 bg-stone-100 dark:bg-stone-950 flex flex-col md:flex-row justify-between items-start border-t border-stone-200/20">
 <div class="mb-12 md:mb-0">
