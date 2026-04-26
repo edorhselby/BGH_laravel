@@ -115,9 +115,11 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-xl transition-all duration-300">
 <div class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-screen-2xl mx-auto">
-<div class="text-2xl font-serif italic text-stone-900 dark:text-stone-50 tracking-tight">
-                Bee's Glam Hub
-            </div>
+<div class="flex items-center gap-4">
+<a href="/" class="inline-flex items-center">
+<img src="{{ asset('images/BGH-logo.jpeg') }}" alt="Bee's Glam Hub" class="h-24 w-auto object-contain" />
+</a>
+</div>
 <div class="hidden md:flex items-center gap-10">
 <a class="text-stone-900 dark:text-stone-50 font-semibold border-b border-stone-400 font-noto-serif transition-colors duration-300" href="/">Home</a>
 <button onclick="openModal('login')" class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300">Login</button>
@@ -127,10 +129,11 @@
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Shop">Shop</a>
 <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 font-noto-serif transition-colors duration-300" href="/Portfolio">Portfolio</a>
 </div>  <!-- TODO: Make pages for these paths and update hrefs accordingly -->
+<a href="https://wa.me/+233540908494">
 <button class="silk-gradient text-on-primary px-8 py-3 rounded-md font-medium tracking-wide hover:opacity-
 90 active:scale-95 transition-all duration-300">
                 Book Now
-            </button>
+            </button></a>
 </div>
 </nav>
 <main class="pt-24">
@@ -146,9 +149,10 @@
                         Where bridal elegance meets editorial precision. Experience the ultimate luxury in makeup artistry and skin treatments.
                     </p>
 <div class="flex flex-col sm:flex-row gap-6">
+<a href="https://wa.me/+233540908494">
 <button class="silk-gradient text-on-primary px-10 py-5 rounded-md font-semibold text-lg hover:opacity-90 transition-all">
                             Book Appointment
-                        </button>
+                        </button></a>
 <button class="border border-outline-variant/30 text-primary px-10 py-5 rounded-md font-semibold text-lg hover:bg-surface-container-low transition-all">
                             View Portfolio
                         </button>
@@ -448,8 +452,8 @@ document.addEventListener('keydown', function(event) {
 </div>
 <div class="flex flex-col gap-4">
 <span class="text-stone-400 text-xs font-bold tracking-widest uppercase">Company</span>
-<a class="text-stone-700 dark:text-stone-300 hover:text-stone-800 dark:hover:text-stone-200 font-manrope text-sm tracking-wide transition-colors" href="#">Contact</a>
-<a class="text-stone-700 dark:text-stone-300 hover:text-stone-800 dark:hover:text-stone-200 font-manrope text-sm tracking-wide transition-colors" href="#">Instagram</a>
+<a class="text-stone-700 dark:text-stone-300 hover:text-stone-800 dark:hover:text-stone-200 font-manrope text-sm tracking-wide transition-colors" href="https://wa.me/+233540908494">Contact</a>
+<a class="text-stone-700 dark:text-stone-300 hover:text-stone-800 dark:hover:text-stone-200 font-manrope text-sm tracking-wide transition-colors" href="https://www.instagram.com/beesglamhub/" blank="">Instagram</a>
 <a class="text-stone-700 dark:text-stone-300 hover:text-stone-800 dark:hover:text-stone-200 font-manrope text-sm tracking-wide transition-colors" href="#">Newsletter</a>
 <a class="text-stone-700 dark:text-stone-300 hover:text-stone-800 dark:hover:text-stone-200 font-manrope text-sm tracking-wide transition-colors" href="#">Privacy Policy</a>
 </div>
